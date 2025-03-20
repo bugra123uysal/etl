@@ -1,0 +1,104 @@
+ETL Projesi: Housing Dataset Analizi
+
+📌 Proje Açıklaması
+
+Bu proje, veri mühendisliği ve ETL (Extract, Transform, Load) süreci üzerine yapılan ilk çalışmamdır.
+Housing Dataset kullanılarak veri temizleme, dönüştürme ve analiz süreçleri uygulanmıştır.
+
+📊 Proje kapsamında neler yapıldı?
+
+✔ Python ile ETL Süreci (Extract - Transform - Load)✔ Eksik veri kontrolü (Eksik veri bulunmadı)✔ Yeni değişkenler oluşturarak veri zenginleştirme✔ Fiyat analizi, lüks seviyesi ve diğer faktörleri içeren görselleştirmeler✔ SQL kullanarak veriye sorgular yazma
+
+🚀 İlerleyen süreçte, eksik veri içeren daha büyük bir veri seti ile yeni bir ETL projesi yapmayı planlıyorum.
+
+📌 Kullanılan Teknolojiler ve Kütüphaneler
+
+Python (Veri işleme ve analiz için)
+
+Pandas (Veri seti manipülasyonu)
+
+Seaborn & Matplotlib (Veri görselleştirme)
+
+NumPy (Matematiksel işlemler)
+
+SQL (pyodbc) (Veri tabanı sorguları)
+
+📌 Proje Adımları (ETL Süreci)
+
+1️⃣ Veri Çekme (Extract)
+
+Housing.csv adlı veri seti pd.read_csv() ile okundu.
+
+2️⃣ Veri Dönüştürme (Transform)
+
+Yes/No değerleri 1/0 olarak değiştirildi.
+
+Yeni değişkenler oluşturuldu:
+
+price_per_sqft → m² başına fiyat
+
+stories-area → Kat başına düşen alan
+
+house-room → Evdeki toplam oda sayısı
+
+lux → Lüks seviyesi (Air conditioning, guestroom vb.)
+
+parking_bedroom → Otopark sayısının yatak odasına oranı
+
+3️⃣ Veri Yükleme (Load)
+
+Dönüştürülen veri tekrar CSV olarak kaydedildi (to_csv())
+
+SQL bağlantısı kurulup veritabanına yazılabilir
+
+📊 Veri Analizi ve Görselleştirmeler
+
+Proje kapsamında 13 farklı grafik oluşturuldu:
+
+📌 Genel Fiyat ve Alan Analizleri✔ Fiyat & Alan Scatter Plot✔ Ev Fiyatlarının Dağılımı (Histogram)✔ Kat Sayısı, Otopark Sayısı, Bodrum Katı gibi değişkenlerin dağılımı (Countplot)
+
+📌 Lüks ve Bölgesel Analizler✔ Lüks Seviyesi & Fiyat Boxplot✔ Öncelikli Bölgelerdeki Evlerin Dağılımı (Countplot)✔ Otopark Sayısına Göre Ortalama Fiyat (Barplot)
+
+📌 Evin Donanım Seviyesi ve Fiyat İlişkisi✔ Mobilya Durumu & Fiyat Barplot✔ Banyo Sayısı & Fiyat Countplot
+
+📌 SQL Sorguları ve Veri Tabanı Çalışmaları
+
+SQL kullanarak yapılan analizler:✔ Bölgelere göre ortalama fiyatı hesaplama✔ Lüks seviyesine göre sıralama✔ Otopark sayısı en fazla olan evleri listeleme✔ Fiyatı belirli bir aralıkta olan evleri filtreleme
+
+Örnek SQL sorgularından biri:
+
+SELECT prefarea, AVG(price) AS avg_price  
+FROM Housing  
+GROUP BY prefarea  
+ORDER BY avg_price DESC;
+
+📌 Yapılabilecek Geliştirmeler
+
+🔹 Büyük ve eksik verili bir veri seti ile yeni ETL projesi yapmak🔹 SQL veritabanına kayıt ekleme (ETL Load sürecini genişletmek)🔹 Flask/Dash ile interaktif bir veri analizi dashboard’u geliştirmek🔹 Makine öğrenmesi modeli ekleyerek fiyat tahmini yapmak
+
+📌 Kurulum & Kullanım
+
+1️⃣ Gerekli kütüphaneleri yükleyin:
+
+pip install pandas numpy seaborn matplotlib pyodbc
+
+2️⃣ Python dosyasını çalıştırın:
+
+python etl-proje.py
+
+3️⃣ Çıktılar:
+
+Yeni dönüştürülmüş veri seti (Housing.csv)
+
+Grafikler Seaborn & Matplotlib ile oluşturulur.
+
+📌 Sonuç & Değerlendirme
+
+Bu proje, ilk ETL projem olarak veri mühendisliği süreçlerini anlamama yardımcı oldu.
+Eksik veri içermeyen küçük bir veri setiyle başarılı bir ETL süreci uygulandı.
+
+🚀 Bir sonraki adımda, eksik veri içeren daha büyük bir veri setiyle çalışıp ETL sürecini genişleteceğim!
+
+📌 GitHub Repo:
+
+🔗 bugra123uysal/etl
