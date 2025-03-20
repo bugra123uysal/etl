@@ -1,6 +1,13 @@
 select * from Housing
 order by average_room_size desc
 
+select top 10  * from Housing
+order by price desc
+
+select top 10 * from Housing
+order by area desc
+
+
 select * from Housing
 order by  price_per_sqft desc
 
@@ -23,12 +30,13 @@ select * from Housing
 where furnishingstatus='unfurnished'
 order by price desc
 
-select * from Housing
+select top 10 * from Housing
 order by parking desc
 
 
-select * from Housing 
+select top 10 * from Housing 
 order by lux asc
 
-select * from Housing
+select top 10 * from Housing
 order by parking_bedroom asc
+
